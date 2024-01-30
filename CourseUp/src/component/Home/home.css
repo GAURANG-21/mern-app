@@ -1,0 +1,23 @@
+.image {
+  filter: drop-shadow(-20px 15px 5rem);
+  border-radius: 50%;
+  /* animation: animation-name duration timing-function delay iteration-count direction fill-mode; */
+  animation: vector-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes vector-animation {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.brandsBanner > svg {
+  margin-top: 20px;
+  font-size: 5rem;
+  transition: color 0.5s;
+}
+
+.brandsBanner > svg:hover {
+  color: rgb(255, 221, 0);
+}
+
