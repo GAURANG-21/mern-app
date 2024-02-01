@@ -14,10 +14,12 @@ import { useDisclosure } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const LinkButton = ({ url = "/", title = "Home", onClose}) => {
+const LinkButton = ({ url = "/", title = "Home", onClose }) => {
   return (
     <Link to={url}>
-      <Button variant={"ghost"} onClick={onClose}>{title}</Button>
+      <Button variant={"ghost"} onClick={onClose}>
+        {title}
+      </Button>
     </Link>
   );
 };
@@ -25,8 +27,8 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isAuthenticated = false;
   const user = {
-    role: "admin"
-  }
+    role: "admin",
+  };
 
   return (
     <>
@@ -51,32 +53,45 @@ const Header = () => {
 
           <DrawerBody>
             <VStack alignItems={"flex-start"}>
-              <LinkButton onClose={onClose}/>
-              <LinkButton url="/courses" title="Courses" onClose={onClose}/>
-              <LinkButton url="/request" title="Request a Course" onClose={onClose}/>
-              <LinkButton url="/contact" title="Contact Us"  onClose={onClose}/>
-              <LinkButton url="/about" title="About Us"  onClose={onClose}/>
+              <LinkButton onClose={onClose} />
+              <LinkButton url="/courses" title="Courses" onClose={onClose} />
+              <LinkButton
+                url="/request"
+                title="Request a Course"
+                onClose={onClose}
+              />
+              <LinkButton url="/contact" title="Contact Us" onClose={onClose} />
+              <LinkButton url="/about" title="About Us" onClose={onClose} />
             </VStack>
           </DrawerBody>
 
-          <DrawerFooter display={"flex"} justifyContent={"space-evenly"} bottom="2rem">
+          <DrawerFooter
+            display={"flex"}
+            justifyContent={"space-evenly"}
+            bottom="2rem"
+          >
             {isAuthenticated ? (
               <>
                 <VStack>
-                    <HStack>
-                  <Link to="/profile" onClick={onClose}>
-                    <Button>Profile</Button>
-                  </Link>
-                  <p>OR</p>
-                  <Link to="/logout" onClick={onClose}>
-                    <Button>
-                      <RiLogoutBoxLine /> Logout
-                    </Button>
-                  </Link>
-                    </HStack>
-                {user && user.role=='admin' && <Link to="/dashboard" onClick={onClose}>
-                    <Button variant={"ghost"} ><RiDashboardFill/>Dashboard</Button>
-                </Link>}
+                  <HStack>
+                    <Link to="/profile" onClick={onClose}>
+                      <Button>Profile</Button>
+                    </Link>
+                    <p>OR</p>
+                    <Link to="/logout" onClick={onClose}>
+                      <Button>
+                        <RiLogoutBoxLine /> Logout
+                      </Button>
+                    </Link>
+                  </HStack>
+                  {user && user.role == "admin" && (
+                    <Link to="/dashboard" onClick={onClose}>
+                      <Button variant={"ghost"}>
+                        <RiDashboardFill />
+                        Dashboard
+                      </Button>
+                    </Link>
+                  )}
                 </VStack>
               </>
             ) : (
@@ -100,7 +115,7 @@ const Header = () => {
 LinkButton.propTypes = {
   url: PropTypes.string,
   title: PropTypes.string,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
 };
 
 export default Header;

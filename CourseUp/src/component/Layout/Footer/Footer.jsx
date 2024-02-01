@@ -23,7 +23,7 @@ const Footer = () => {
         flexDirection={["column"]}
         flexWrap={"wrap"}
         width={"100%"}
-        paddingY={["0", "5", "2vh"]}
+        paddingY={["0", "5", "4vh"]}
         color={"blackAlpha.900"}
       >
         <Heading>All Rights Reserved</Heading>
