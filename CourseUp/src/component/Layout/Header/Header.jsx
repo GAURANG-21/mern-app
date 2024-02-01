@@ -1,5 +1,5 @@
 import { Button, VStack, HStack } from "@chakra-ui/react";
-import ColorModeSwitcher from "../../ColorModeSwitcher";
+import ColorModeSwitcher from "../../../ColorModeSwitcher";
 import { RiMenu5Fill, RiLogoutBoxLine, RiDashboardFill } from "react-icons/ri";
 import {
   Drawer,
@@ -14,16 +14,16 @@ import { useDisclosure } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const LinkButton = ({ url = "/", title = "Home" }) => {
+const LinkButton = ({ url = "/", title = "Home", onClose}) => {
   return (
     <Link to={url}>
-      <Button variant={"ghost"}>{title}</Button>
+      <Button variant={"ghost"} onClick={onClose}>{title}</Button>
     </Link>
   );
 };
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const user = {
     role: "admin"
   }
@@ -51,11 +51,11 @@ const Header = () => {
 
           <DrawerBody>
             <VStack alignItems={"flex-start"}>
-              <LinkButton />
-              <LinkButton url="/courses" title="Courses" />
-              <LinkButton url="/request" title="Request a Course" />
-              <LinkButton url="/contact" title="Contact Us" />
-              <LinkButton url="/about" title="About Us" />
+              <LinkButton onClose={onClose}/>
+              <LinkButton url="/courses" title="Courses" onClose={onClose}/>
+              <LinkButton url="/request" title="Request a Course" onClose={onClose}/>
+              <LinkButton url="/contact" title="Contact Us"  onClose={onClose}/>
+              <LinkButton url="/about" title="About Us"  onClose={onClose}/>
             </VStack>
           </DrawerBody>
 
@@ -64,29 +64,29 @@ const Header = () => {
               <>
                 <VStack>
                     <HStack>
-                  <Link to="/profile">
+                  <Link to="/profile" onClick={onClose}>
                     <Button>Profile</Button>
                   </Link>
                   <p>OR</p>
-                  <Link to="/logout">
+                  <Link to="/logout" onClick={onClose}>
                     <Button>
                       <RiLogoutBoxLine /> Logout
                     </Button>
                   </Link>
                     </HStack>
-                {user && user.role=='admin' && <Link to="/dashboard">
-                    <Button variant={"ghost"}><RiDashboardFill/>Dashboard</Button>
+                {user && user.role=='admin' && <Link to="/dashboard" onClick={onClose}>
+                    <Button variant={"ghost"} ><RiDashboardFill/>Dashboard</Button>
                 </Link>}
                 </VStack>
               </>
             ) : (
               <>
-                <Link to="/login">
+                <Link to="/login" onClick={onClose}>
                   <Button>Login</Button>
                 </Link>
                 <p>OR</p>
-                <Link to="/register">
-                  <Button>Resiger</Button>
+                <Link to="/register" onClick={onClose}>
+                  <Button>Register</Button>
                 </Link>
               </>
             )}
@@ -100,6 +100,7 @@ const Header = () => {
 LinkButton.propTypes = {
   url: PropTypes.string,
   title: PropTypes.string,
+  onClose: PropTypes.func
 };
 
 export default Header;

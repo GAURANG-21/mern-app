@@ -11,6 +11,7 @@ import { CgGoogle, CgYoutube } from "react-icons/cg";
 import { SiCoursera, SiUdemy } from "react-icons/si";
 import { DiAws } from "react-icons/di";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -45,36 +46,60 @@ const Home = () => {
       </Box> */}
 
       <HStack
-      display={"flex"}
-      flexDirection={["column", "row"]}
-      justifyContent={["center", "flex-end"]}
-      alignItems={"center"}
-      px={["2%", "5%", "8%"]}
-      h={"100vh"}
-    >
-      <Stack px={["0px", "2rem", "4rem"]}>
-        <Heading fontSize={["8vw", "5vw", "3.5vw"]} textAlign={"center"} flexWrap={"nowrap"}>
-          Learn from the Experts!!
-        </Heading>
-        <Text fontSize={["3.8vw", "3vw", "2vw"]} textAlign={["center","right"]}>
-          Find valuable content at a reasonable price
-        </Text>
-        <Button 
-        bgGradient={'linear(to-r, pink.400, yellow.400)'}>
-          Yellow</Button>
-      </Stack>
-      <Image
-        className="image"
-        src="/src/assets/images/Studying.jpg"
-        fallbackSrc="https://via.placeholder.com/150"
-        h={["40%", "50%", "60%"]}
-        w={["70%", "50%", "30%"]}
-      ></Image>
-    </HStack>
+        display={"flex"}
+        flexDirection={["column", "row"]}
+        justifyContent={["center", "flex-end"]}
+        alignItems={"center"}
+        px={["2%", "5%", "8%"]}
+        h={"100vh"}
+      >
+        <div style={{ px: ["0px", "2rem", "4rem"] }}>
+          <Heading
+            fontSize={["8vw", "5vw", "3.5vw"]}
+            textAlign={"center"}
+            flexWrap={"nowrap"}
+          >
+            Learn from the Experts!!
+          </Heading>
+          <Text fontSize={["3.8vw", "2.4vw", "2vw"]} textAlign={"center"}>
+            Find valuable content at a reasonable price
+          </Text>
+          <Link
+            to="/courses"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              paddingTop: "5px",
+            }}
+          >
+            <Button bgGradient={"linear(to-r, pink.400, yellow.400)"}>
+              Explore Now
+            </Button>
+          </Link>
+          {/* <Link to="/courses" style={{display:"inline-block"}}>
+          <button>Explore Now</button>
+          </Link> */}
+        </div>
+        <Image
+          className="image"
+          src="/src/assets/images/Studying.jpg"
+          fallbackSrc="https://via.placeholder.com/150"
+          h={["40%", "50%", "60%"]}
+          w={["70%", "50%", "30%"]}
+        ></Image>
+      </HStack>
 
-
-      <Box bgGradient={'linear(to-r, pink.400, yellow.400)'} h={["22vh","30vh","32vh"]} mb={["2","5"]}>
-        <Heading textAlign={"center"} fontFamily={"body"} color={"blackAlpha.900"} fontSize={['2em',"4em"]}>
+      <Box
+        bgGradient={"linear(to-r, pink.400, yellow.400)"}
+        h={["22vh", "30vh", "30vh"]}
+        mb={["2", "5"]}
+      >
+        <Heading
+          textAlign={"center"}
+          fontFamily={"cursive"}
+          color={"blackAlpha.900"}
+          fontSize={["2em", "4em"]}
+        >
           OUR BRANDS
         </Heading>
         <HStack
@@ -89,20 +114,33 @@ const Home = () => {
           <DiAws />
         </HStack>
       </Box>
-      <div style={{ position: 'relative', paddingBottom: '40.25%', height: 0, overflow: 'hidden', maxWidth: '100%', paddingLeft:"2%" }}>
-  <iframe
-    width="100%"
-    height="100%"
-    src="https://www.youtube.com/embed/4mHq6Y7JSmg"
-    title="Nintendo Switch - OLED Model - Announcement Trailer"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-  ></iframe>
-</div>
-
-
+      <div
+        style={{
+          position: "relative",
+          paddingBottom: "40.25%",
+          height: 0,
+          overflow: "hidden",
+          maxWidth: "80%",
+          marginLeft: "17%",
+        }}
+      >
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/4mHq6Y7JSmg"
+          title="Nintendo Switch - OLED Model - Announcement Trailer"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "80%",
+            height: "100%",
+          }}
+        ></iframe>
+      </div>
     </Stack>
   );
 };
