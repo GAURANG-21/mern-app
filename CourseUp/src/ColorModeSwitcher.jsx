@@ -1,26 +1,26 @@
-import {useColorMode, useColorModeValue, IconButton} from '@chakra-ui/react'
-import {FaMoon, FaSun} from 'react-icons/fa'
+import { useColorMode, useColorModeValue, IconButton } from "@chakra-ui/react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
-const ColorModeSwitcher = props =>{
-    const {toggleColorMode} = useColorMode();
-    const text = useColorMode('dark','light');
-    const SwitchIcon = useColorModeValue(FaMoon,FaSun);
+const ColorModeSwitcher = (props) => {
+  const { toggleColorMode } = useColorMode();
+  const text = useColorMode("dark", "light");
+  const SwitchIcon = useColorModeValue(FaMoon, FaSun);
 
-    return (
-        <IconButton
-        size={"md"}
-        fontSize={"lg"}
-        aria-label={`Switch to ${text} mode`}
-        variant="ghost"
-        color= "current"
-        position={"fixed"}
-        top={"4"}
-        right={"4"}
-        onClick={toggleColorMode}
-        icon={<SwitchIcon/>}
-        {...props}>
-        </IconButton>
-    )
-}
+  return (
+    <IconButton
+      size={"md"}
+      fontSize={"lg"}
+      aria-label={`Switch to ${text} mode`}
+      variant="ghost"
+      color="current"
+      position={"fixed"}
+      top={"4"}
+      right={"4"}
+      onClick={toggleColorMode}
+      icon={<SwitchIcon />}
+      {...props}
+    ></IconButton>
+  );
+};
 
-export default ColorModeSwitcher
+export default ColorModeSwitcher;

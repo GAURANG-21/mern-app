@@ -6,7 +6,7 @@ import {
   HStack,
   Button,
   Text,
-  Box
+  Box,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -39,8 +39,11 @@ const Courses = () => {
           }}
         />
         <div
-          style={{// Ensure the div takes the full width
-          }}
+          style={
+            {
+              // Ensure the div takes the full width
+            }
+          }
         >
           <div>
             {categories.map((item, index) => (

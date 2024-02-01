@@ -5,6 +5,9 @@ import Courses from "./component/Courses/Courses";
 import Footer from "./component/Layout/Footer/Footer";
 import Header from "./component/Layout/Header/Header";
 import Login from "./component/Auth/Login";
+import Register from "./component/Auth/Register";
+import ForgetPassword from "./component/Auth/ForgetPassword";
+import ResetPassword from "./component/Auth/ResetPassword";
 
 function App() {
   return (
@@ -14,7 +17,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/courses" element={<Courses />}></Route>
-          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/forgetPassword" element={<ForgetPassword />} />
+          <Route
+            path="/resetPassword/:token"
+            element={<ResetPassword />}
+          ></Route>
         </Routes>
         <Footer />
       </Router>

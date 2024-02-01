@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <Stack
       bgGradient={"linear(to-r, pink.400, yellow.400)"}
-      h={["22vh","17vh", "18vh"]}
+      h={["26vh", "17vh", "18vh"]}
       spacing={2}
       display={"flex"}
       flexDirection={["column", "row"]}
@@ -31,10 +31,10 @@ const Footer = () => {
       </Box>
       <HStack
         spacing={["2", "10"]}
-        justifyContent={["space-evenly","center"]}
+        justifyContent={["space-evenly", "center"]}
         alignItems={["space-evenly", "center"]}
         color={"black"}
-        fontSize={["60","60", "90"]}
+        fontSize={["60", "60", "90"]}
         py={["0", "8", "3"]}
       >
         <a
