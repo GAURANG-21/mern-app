@@ -16,7 +16,7 @@ const RequestUs = () => {
 
   return (
     <Container
-      h={"60vh"}
+      h={["75vh", "70vh", "65vh"]}
       marginTop={"28"}
       boxShadow="dark-lg"
       rounded="10%"
