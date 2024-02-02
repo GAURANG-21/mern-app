@@ -39,21 +39,21 @@ const Footer = () => {
       >
         <a
           href="https://github.com/GAURANG-21/"
-          target={"_blank"}
+          target={"blank"}
           rel="noreferrer"
         >
           <DiGit />
         </a>
         <a
           href="https://www.linkedin.com/in/gaurang-agarwal-519794257/"
-          target={"_blank"}
+          target={"blank"}
           rel="noreferrer"
         >
           <TiSocialLinkedinCircular />
         </a>
         <a
           href="https://www.instagram.com/gaurang._.21/"
-          target={"_blank"}
+          target={"blank"}
           rel="noreferrer"
         >
           <TiSocialInstagramCircular />

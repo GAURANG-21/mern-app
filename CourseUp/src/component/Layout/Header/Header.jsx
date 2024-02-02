@@ -56,11 +56,11 @@ const Header = () => {
               <LinkButton onClose={onClose} />
               <LinkButton url="/courses" title="Courses" onClose={onClose} />
               <LinkButton
-                url="/request"
+                url="/requestUs"
                 title="Request a Course"
                 onClose={onClose}
               />
-              <LinkButton url="/contact" title="Contact Us" onClose={onClose} />
+              <LinkButton url="/contactUs" title="Contact Us" onClose={onClose} />
               <LinkButton url="/about" title="About Us" onClose={onClose} />
             </VStack>
           </DrawerBody>
