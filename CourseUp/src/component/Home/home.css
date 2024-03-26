@@ -20,3 +20,13 @@
 .brandsBanner > svg:hover {
   color: rgb(255, 221, 0);
 }
+
+.course {
+  width: 250px;
+  margin-top: 1rem;
+  transition: all 0.5s;
+}
+
+.course:hover {
+  transform: translateY(-10px);
+}
