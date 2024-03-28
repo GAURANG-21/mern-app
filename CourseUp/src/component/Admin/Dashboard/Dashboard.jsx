@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import Sidebar from "../Sidebar";
 import { RiArrowDownLine, RiArrowUpLine } from "react-icons/ri";
+import PropTypes from "prop-types";
 
 const DataBox = ({ title, qty, qtyPercentage, profit }) => (
   <Box
@@ -125,3 +126,16 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+DataBox.propTypes = {
+  title: PropTypes.string,
+  qty: PropTypes.number,
+  qtyPercentage: PropTypes.number,
+  profit: PropTypes.bool,
+};
+
+Bar.propTypes = {
+  title: PropTypes.string,
+  value: PropTypes.number,
+  profit: PropTypes.bool,
+};
