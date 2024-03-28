@@ -19,6 +19,10 @@ import CoursePage from "./component/CoursePage/CoursePage";
 import Profile from "./component/Profile/Profile";
 import UpdateProfile from "./component/Profile/UpdateProfile";
 import ChangePassword from "./component/Profile/ChangePassword";
+import Dashboard from "./component/Admin/Dashboard/Dashboard";
+import CreateCourses from "./component/Admin/CreateCourse/CreateCourse";
+import AdminCourses from "./component/Admin/AdminCourses/AdminCourses";
+import User from "./component/Admin/Users/Users";
 
 function App() {
   return (
@@ -46,6 +50,12 @@ function App() {
             path="/resetPassword/:token"
             element={<ResetPassword />}
           ></Route>
+
+          {/*Admin Routes*/}
+          <Route path="/admin/dashboard" element={<Dashboard />}></Route>
+          <Route path="/admin/createcourse" element={<CreateCourses />}></Route>
+          <Route path="/admin/courses" element={<AdminCourses />}></Route>
+          <Route path="/admin/users" element={<User />}></Route>
         </Routes>
         <Footer />
       </Router>
