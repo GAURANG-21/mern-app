@@ -1,4 +1,4 @@
-import { Button, VStack } from "@chakra-ui/react";
+import { Button, VStack, Box } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import {
   RiDashboardFill,
@@ -17,6 +17,8 @@ const Sidebar = () => {
       spacing={"8"}
       p="16"
       boxShadow={"-2px 0 10px rgba(107, 70, 193, 0.5)"}
+      roundedTopLeft={"10%"}
+      roundedBottomLeft={"10%"}
     >
       <LinkButton
         url="dashboard"
@@ -50,16 +52,18 @@ export default Sidebar;
 
 function LinkButton({ url, Icon, text, check }) {
   return (
-    <Link to={`/admin/${url}`}>
-      <Button
-        fontSize={"larger"}
-        variant={"ghost"}
-        colorScheme={check ? "purple" : ""}
-      >
-        <Icon style={{ margin: "4px" }} />
-        {text}
-      </Button>
-    </Link>
+    <Box borderBottom={"4px solid rgba(107, 70, 193, 0.5)"} w={"full"}>
+      <Link to={`/admin/${url}`}>
+        <Button
+          fontSize={"larger"}
+          variant={"ghost"}
+          colorScheme={check ? "purple" : ""}
+        >
+          <Icon style={{ margin: "4px" }} />
+          {text}
+        </Button>
+      </Link>
+    </Box>
   );
 }
 
