@@ -85,7 +85,7 @@ const Header = () => {
                     </Link>
                   </HStack>
                   {user && user.role == "admin" && (
-                    <Link to="/dashboard" onClick={onClose}>
+                    <Link to="/admin/dashboard" onClick={onClose}>
                       <Button variant={"ghost"}>
                         <RiDashboardFill />
                         Dashboard

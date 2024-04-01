@@ -10,6 +10,7 @@ import {
 import Sidebar from "../Sidebar";
 import { RiArrowDownLine, RiArrowUpLine } from "react-icons/ri";
 import PropTypes from "prop-types";
+import { LineChart, DoughnutChart } from "./Chart.jsx";
 
 const DataBox = ({ title, qty, qtyPercentage, profit }) => (
   <Box
@@ -68,7 +69,7 @@ const Dashboard = () => {
             title={"Views"}
             qty={123}
             qtyPercentage={23}
-            profit={"true"}
+            profit= {true}
           />
           <DataBox title={"Users"} qty={23} qtyPercentage={78} profit={false} />
           <DataBox
@@ -95,6 +96,7 @@ const Dashboard = () => {
             Views Graph
           </Heading>
           {/*Line Graph*/}
+          <LineChart/>
         </Box>
 
         <Grid templateColumns={["1fr", "2fr 1fr"]}>
@@ -108,15 +110,16 @@ const Dashboard = () => {
               Progress Bar
             </Heading>
             <Box>
-              <Bar title="Views" value="30" profit={true} />
-              <Bar title="Users" value="78" profit={true} />
-              <Bar title="Subscription" value="20" profit={false} />
+              <Bar title="Views" value={30} profit={true} />
+              <Bar title="Users" value={78} profit={true} />
+              <Bar title="Subscription" value={28} profit={false} />
             </Box>
           </Box>
           <Box p={["0", "16"]} boxSizing="border-box" py={"4"}>
             <Heading textAlign={"center"} size={"md"} mb={"4"}>
               Users{" "}
             </Heading>
+            <DoughnutChart />
           </Box>
         </Grid>
       </Box>

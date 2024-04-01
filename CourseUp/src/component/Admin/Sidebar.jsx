@@ -17,8 +17,8 @@ const Sidebar = () => {
       spacing={"8"}
       p="16"
       boxShadow={"-2px 0 10px rgba(107, 70, 193, 0.5)"}
-      roundedTopLeft={"10%"}
-      roundedBottomLeft={"10%"}
+      roundedTopLeft={"2%"}
+      roundedBottomLeft={"2%"}
     >
       <LinkButton
         url="dashboard"
@@ -69,7 +69,7 @@ function LinkButton({ url, Icon, text, check }) {
 
 LinkButton.propTypes = {
   url: PropTypes.string,
-  Icon: PropTypes.element,
+  Icon: PropTypes.func,
   text: PropTypes.string,
   check: PropTypes.bool,
 };
