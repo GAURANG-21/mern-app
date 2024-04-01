@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const fileUploadCss = {
+export const fileUploadCss = {
   cursor: "pointer",
   marginLeft: "-5%",
   width: "110%",
