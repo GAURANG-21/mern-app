@@ -1,0 +1,14 @@
+bcrypt
+cloudinary
+cookie-parser
+cors
+datauri
+dotenv
+express
+jsonwebtoken
+mongoose
+multer
+node-cron
+nodemailer
+razorpay
+validator
