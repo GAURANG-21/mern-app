@@ -1,6 +1,7 @@
 import express from "express";
 import course from "./routes/courseRoutes.js";
 import user from "./routes/userRoutes.js";
+import { connectDB } from "./config/database.js";
 
 export const app = express();
 app.use("/api/v1", course);
